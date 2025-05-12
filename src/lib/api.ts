@@ -1,3 +1,5 @@
+import { Todo } from "@/types/todo.type";
+
 const BASE_URL = "http://localhost:4000/todos";
 
 export const getTodoList = async () => {
@@ -22,8 +24,8 @@ export const addTodo = async (todo: { title: string }) => {
   return res.json();
 };
 
-export const updateTodo = async (id: number, todo: { title: string }) => {
-  const res = await fetch(`${BASE_URL}/${id}`, {
+export const updateTodo = async (todo: Todo) => {
+  const res = await fetch(`${BASE_URL}/${todo.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
