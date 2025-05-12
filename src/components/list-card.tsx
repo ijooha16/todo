@@ -3,6 +3,7 @@
 import { useUpdateTodoMutation } from "@/hooks/mutations/use-todo-mutation";
 import { TodoProps } from "@/types/todo.type";
 import EditButton from "./edit-button";
+import DeleteButton from "./delete-button";
 
 const ListCard = ({ todo }: TodoProps) => {
   const { mutate: updateTodo } = useUpdateTodoMutation();
@@ -18,6 +19,7 @@ const ListCard = ({ todo }: TodoProps) => {
       <input type="checkbox" checked={todo.completed} onChange={handleChange} />
       <div>{todo.title}</div>
       <EditButton todo={todo} />
+      <DeleteButton id={todo.id} />
     </div>
   );
 };

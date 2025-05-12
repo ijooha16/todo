@@ -38,7 +38,7 @@ export const updateTodo = async (todo: Todo) => {
   return res.json();
 };
 
-export const deleteTodo = async (id: number) => {
+export const deleteTodo = async (id: string) => {
   const res = await fetch(`${BASE_URL}/${id}`, {
     method: "DELETE",
   });
