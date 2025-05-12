@@ -1,9 +1,10 @@
 "use client";
 
 import { useUpdateTodoMutation } from "@/hooks/mutations/use-todo-mutation";
-import { Todo } from "@/types/todo.type";
+import { TodoProps } from "@/types/todo.type";
+import EditButton from "./edit-button";
 
-const ListCard = ({ todo }: { todo: Todo }) => {
+const ListCard = ({ todo }: TodoProps) => {
   const { mutate: updateTodo } = useUpdateTodoMutation();
   const handleChange = () => {
     updateTodo({
@@ -16,6 +17,7 @@ const ListCard = ({ todo }: { todo: Todo }) => {
     <div>
       <input type="checkbox" checked={todo.completed} onChange={handleChange} />
       <div>{todo.title}</div>
+      <EditButton todo={todo} />
     </div>
   );
 };
