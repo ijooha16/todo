@@ -10,7 +10,11 @@ const DeleteButton = ({ id }: { id: string }) => {
     }
   };
 
-  return <div onClick={handleClick}>삭제</div>;
+  return (
+    <div onClick={handleClick} className="hover:text-gray-300 cursor-pointer">
+      삭제
+    </div>
+  );
 };
 
 export default DeleteButton;

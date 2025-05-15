@@ -15,11 +15,21 @@ const ListCard = ({ todo }: TodoProps) => {
   };
 
   return (
-    <div>
-      <input type="checkbox" checked={todo.completed} onChange={handleChange} />
-      <div>{todo.title}</div>
-      <EditButton todo={todo} />
-      <DeleteButton id={todo.id} />
+    <div className="flex items-center justify-between gap-6 w-full border-b-1 border-gray-800 py-3">
+      <div className="flex items-center gap-4 md:gap-6">
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          onChange={handleChange}
+        />
+        <div className={`${todo.completed ? "line-through text-gray-500" : ""}`}>
+          {todo.title}
+        </div>
+      </div>
+      <div className="flex gap-3 md:gap-6 whitespace-nowrap text-gray-500">
+        <EditButton todo={todo} />
+        <DeleteButton id={todo.id} />
+      </div>
     </div>
   );
 };
