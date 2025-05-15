@@ -8,7 +8,7 @@ export const useUpdateTodoMutation = () => {
 
   return useMutation<Todo, Error, Todo>({
     mutationFn: (todo) => updateTodo(todo),
-    onSuccess: (data) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.TODOS });
     },
     onError: (error) => console.log(error),
@@ -20,7 +20,7 @@ export const useDeleteTodoMutation = () => {
 
   return useMutation<Todo, Error, string>({
     mutationFn: (id) => deleteTodo(id),
-    onSuccess: (data) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.TODOS });
     },
     onError: (error) => console.log(error),
@@ -32,7 +32,7 @@ export const useAddTodoMutation = () => {
 
   return useMutation<Todo, Error, Todo>({
     mutationFn: (todo) => addTodo(todo),
-    onSuccess: (data) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.TODOS });
     },
     onError: (error) => console.log(error),
