@@ -1,6 +1,6 @@
 import { Todo } from "@/types/todo.type";
 
-const BASE_URL = "http://localhost:10000/todos";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL!;
 
 export const getTodoList = async () => {
   const res = await fetch(BASE_URL);
