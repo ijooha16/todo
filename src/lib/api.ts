@@ -1,6 +1,6 @@
 import { Todo } from "@/types/todo.type";
 
-const BASE_URL = "https://stupendous-shadow-bandicoot.glitch.me";
+const BASE_URL = "https://stupendous-shadow-bandicoot.glitch.me/todos";
 
 export const getTodoList = async () => {
   const res = await fetch(BASE_URL);
