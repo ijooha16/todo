@@ -9,7 +9,6 @@ const ListContainer = () => {
   const [isFiltered, setIsFiltered] = useState(true);
   const filteredTodos = todos.filter((todo) => !todo.completed);
   const todoList = isFiltered ? todos : filteredTodos;
-  console.log(isLoading, isPending, isFetching)
 
   return (
     <div className="space-y-6 w-96 md:w-3xl">
